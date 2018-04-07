@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source /etc/envvars
+
+cd /microweber
+
+exec 2>&1
+exec hhvm -vServer.Type=fastcgi -vServer.AllowRunAsRoot=1 -m server -p 9000 
