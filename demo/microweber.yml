@@ -1,0 +1,16 @@
+namespaces:
+  default:
+    services:
+    - name: microweber
+      ports:
+      - {name: http, port: 80}
+      annotations:
+        nginx:
+        - http:
+          - server: microweber.*
+            paths:
+            - path: /
+      pod:
+        containers:
+        - name: microweber
+          image: registry.rebelsoft.com/microweber:latest
