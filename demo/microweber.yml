@@ -7,7 +7,7 @@ namespaces:
       annotations:
         nginx:
         - http:
-          - server: microweber.*
+          - server: "microweber.{{namespace}}.*"
             paths:
             - path: /
       pod:
